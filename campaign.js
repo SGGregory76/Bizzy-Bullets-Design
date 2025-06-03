@@ -24,7 +24,7 @@ const MONSTERS = {
     traits: ["Keen Sight", "Multiattack"],
     lootTable: ["Owlbear feather (rare alchemy ingredient)", "50 gp (for hide)"]
   },
-  // …add as many monsters as you like…
+  // …add more monsters as needed…
 };
 
 const NPCS = {
@@ -40,7 +40,7 @@ const NPCS = {
     gear: ["Smith’s Tools", "Warhammer", "Blacksmith Apron"],
     personality: "Gruff exterior, heart of gold"
   },
-  // …etc…
+  // …add more NPCs as needed…
 };
 
 const LOCATIONS = {
@@ -64,7 +64,7 @@ const LOCATIONS = {
       "Chest with 200 gp hidden inside"
     ]
   },
-  // …plus more…
+  // …add more locations as needed…
 };
 
 const QUESTS = [
@@ -84,7 +84,7 @@ const QUESTS = [
     location: "Stormpeak Keep",
     reward: "150 gp each + rare scroll of Fireball"
   },
-  // …etc…
+  // …add more quests as needed…
 ];
 
 const LOOT = {
@@ -99,7 +99,7 @@ const LOOT = {
   legendary: ["+3 Flame Tongue Sword", "Rod of Lordly Might", "Cloak of Invisibility"]
 };
 
-// 2. Dice-roller utility (e.g. “2d6+3” → random number)
+// 2. Dice‐roller utility (e.g., “2d6+3” → random number)
 function rollDice(formula) {
   // Basic parser: "2d6+3"
   const [dicePart, bonusPart] = formula.split("+");
@@ -116,7 +116,8 @@ function rollDice(formula) {
 function generateMonsterInstance(name) {
   const m = MONSTERS[name];
   const hp = rollDice(m.hp);
-  const loot = m.lootTable[Math.floor(Math.random() * m.lootTable.length)];
+  const loot =
+    m.lootTable[Math.floor(Math.random() * m.lootTable.length)];
   return {
     name,
     cr: m.cr,
@@ -138,7 +139,9 @@ function generateNPC(name) {
 function generateEncounter(locationName, partyLevel) {
   const loc = LOCATIONS[locationName];
   // filter monsters by CR ≤ partyLevel
-  let possible = loc.monsters.filter((mName) => MONSTERS[mName].cr <= partyLevel);
+  let possible = loc.monsters.filter(
+    (mName) => MONSTERS[mName].cr <= partyLevel
+  );
   if (possible.length === 0) {
     possible = loc.monsters; // fallback
   }
@@ -161,7 +164,9 @@ function generateEncounter(locationName, partyLevel) {
 // 6. Pick a random quest for the party level
 function pickRandomQuest(partyLevel) {
   const candidates = QUESTS.filter(
-    (q) => partyLevel >= q.levelRange[0] && partyLevel <= q.levelRange[1]
+    (q) =>
+      partyLevel >= q.levelRange[0] &&
+      partyLevel <= q.levelRange[1]
   );
   return candidates.length
     ? candidates[Math.floor(Math.random() * candidates.length)]
@@ -177,7 +182,7 @@ function generateTreasure(tier) {
 // 8. Build a full campaign (with multiple quests)
 function buildCampaign(partyLevel = 2, numQuests = 3) {
   const campaign = {
-    title: `Auto-Generated Campaign (Lvl ${partyLevel})`,
+    title: `Auto‐Generated Campaign (Lvl ${partyLevel})`,
     quests: [],
     encounters: [],
     npcs: [],
@@ -191,14 +196,18 @@ function buildCampaign(partyLevel = 2, numQuests = 3) {
     const encounter = generateEncounter(quest.location, partyLevel);
     campaign.encounters.push(encounter);
 
-    // pick a random NPC (just pick any key from NPCS)
+    // pick a random NPC
     const npcNames = Object.keys(NPCS);
-    const npcPick = npcNames[Math.floor(Math.random() * npcNames.length)];
+    const npcPick =
+      npcNames[
+        Math.floor(Math.random() * npcNames.length)
+      ];
     campaign.npcs.push(generateNPC(npcPick));
 
-    // random treasure tier (for example: common/uncommon/rare)
+    // random treasure tier
     const tiers = ["common", "uncommon", "rare"];
-    const tierPick = tiers[Math.floor(Math.random() * tiers.length)];
+    const tierPick =
+      tiers[Math.floor(Math.random() * tiers.length)];
     campaign.treasures.push({
       quest: quest.title,
       item: generateTreasure(tierPick)
@@ -209,8 +218,18 @@ function buildCampaign(partyLevel = 2, numQuests = 3) {
 
 // 9. Expose a function to print the campaign as JSON in the page
 function showCampaign() {
-  const levelInput = parseInt(document.getElementById("partyLevel").value, 10) || 1;
-  const questsInput = parseInt(document.getElementById("numQuests").value, 10) || 1;
+  const levelInput = parseInt(
+    document.getElementById("partyLevel").value,
+    10
+  );
+  const questsInput = parseInt(
+    document.getElementById("numQuests").value,
+    10
+  );
   const camp = buildCampaign(levelInput, questsInput);
-  document.getElementById("output").textContent = JSON.stringify(camp, null, 2);
+  document.getElementById("output").textContent = JSON.stringify(
+    camp,
+    null,
+    2
+  );
 }
