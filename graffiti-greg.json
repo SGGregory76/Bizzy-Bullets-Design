@@ -1,6 +1,6 @@
 # Host a test JSON file that references a working image URL
 graffiti_greg_card = {
-    "id": "bbd001-002",
+    "id": "graffiti-greg",
     "name": "Graffiti Greg",
     "status": "available",
     "rarity": "common",
