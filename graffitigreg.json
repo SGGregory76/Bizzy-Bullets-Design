@@ -1,0 +1,31 @@
+import json
+
+# Define JSON metadata for the Graffiti Greg adoptable card
+card_metadata = {
+    "id": "bbd001-002",
+    "name": "Graffiti Greg",
+    "rarity": "Uncommon",
+    "type": "Black Market Operative",
+    "abilities": [
+        {"name": "Spray Distraction", "effect": "Lower enemy visibility for 1 turn."},
+        {"name": "Tag Signal", "effect": "Mark location for ally advantage."}
+    ],
+    "stats": {
+        "stealth": 7,
+        "speed": 6,
+        "charisma": 5,
+        "creativity": 9
+    },
+    "status": "available",
+    "adopted": False,
+    "last_fed": None,
+    "secret_key": None,
+    "image_url": "https://raw.githubusercontent.com/SGGregory76/Bizzy-Bullets-Design/main/GraffitiGreg_AdoptableCard_Under2MB.png"
+}
+
+# Save the JSON metadata
+json_path = "/mnt/data/graffiti-greg.json"
+with open(json_path, "w") as json_file:
+    json.dump(card_metadata, json_file, indent=2)
+
+json_path
