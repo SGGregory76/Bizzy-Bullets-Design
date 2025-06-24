@@ -1,0 +1,33 @@
+{
+  "id": "bbd001-001",
+  "name": "GoldTooth Gorillas",
+  "adopted_by": "pending",
+  "birthday": "2025-06-24T00:00:00Z",
+  "last_fed": "2025-06-24T00:00:00Z",
+  "lifespan_days": 5,
+  "status": "alive",
+  "stats": {
+    "chaos": 7,
+    "swagger": 9,
+    "damage": 6
+  },
+  "abilities": [
+    {
+      "name": "Grill Flash",
+      "description": "Dazzles enemies with a blinding gold smile."
+    },
+    {
+      "name": "Banana Smack",
+      "description": "Stuns opponents with high-velocity fruit slaps."
+    }
+  ],
+  "flavor_text": "This ain’t no zoo monkey. These gorillas run the block.",
+  "art_file": "GoldToothGorillasBBD.png",
+  "history": [
+    {
+      "event": "minted",
+      "by": "system",
+      "timestamp": "2025-06-24T00:00:00Z"
+    }
+  ]
+}
