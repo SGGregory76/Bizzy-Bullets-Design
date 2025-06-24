@@ -1,0 +1,37 @@
+{
+  "id": "bm001-bed7ce97",
+  "name": "Forger",
+  "type": "Black Market",
+  "rarity": "Uncommon",
+  "tier": "Bronze",
+  "alignment": "Neutral",
+  "stats": {
+    "stealth": 6,
+    "influence": 4,
+    "danger": 3
+  },
+  "abilities": [
+    {
+      "name": "Fake IDs",
+      "description": "Forge identification for underground agents."
+    },
+    {
+      "name": "Document Alteration",
+      "description": "Modify records to erase traces of your past."
+    }
+  ],
+  "edition": "1st",
+  "card_number": "022/100",
+  "version": "foil",
+  "art_file": "forger-022.png",
+  "flavor_text": "Your passport just got a second chance.",
+  "owner": "buyer@example.com",
+  "history": [
+    {
+      "from": "minted",
+      "to": "buyer@example.com",
+      "timestamp": "2025-06-24T09:49:01.538911Z"
+    }
+  ],
+  "created_at": "2025-06-24T09:49:01.538921Z"
+}
