@@ -1,25 +1,17 @@
-# Host a test JSON file that references a working image URL
-graffiti_greg_card = {
-    "id": "graffiti-greg",
-    "name": "Graffiti Greg",
-    "status": "available",
-    "rarity": "common",
-    "type": "black market",
-    "adoptable": True,
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Graffiti_London.jpg/640px-Graffiti_London.jpg",
-    "abilities": [
-        "Tag walls for street rep",
-        "Create fake transit passes",
-        "Boost other underground cards by +1 stealth"
-    ],
-    "last_fed": "",
-    "owner": "",
-    "secret_key": ""
+{
+  "id": "graffiti-greg",
+  "name": "Graffiti Greg",
+  "status": "available",
+  "rarity": "common",
+  "type": "black market",
+  "adoptable": true,
+  "image_url": "https://raw.githubusercontent.com/SGGregory76/Bizzy-Bullets-Design/main/GraffitiGreg_AdoptableCard_Under2MB.png",
+  "abilities": [
+    "Tag walls for street rep",
+    "Create fake transit passes",
+    "Boost other underground cards by +1 stealth"
+  ],
+  "last_fed": "",
+  "owner": "",
+  "secret_key": ""
 }
-
-# Save the hosted test file
-output_path = "/mnt/data/graffiti-greg-hosted-test.json"
-with open(output_path, "w") as f:
-    json.dump(graffiti_greg_card, f, indent=2)
-
-output_path
