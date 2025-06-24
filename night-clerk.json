@@ -1,0 +1,27 @@
+import json
+
+# Define the second card: "Night Clerk Nina"
+night_clerk_nina_card = {
+    "id": "night-clerk",
+    "name": "Night Clerk Nina",
+    "status": "available",
+    "rarity": "uncommon",
+    "type": "occupation",
+    "adoptable": True,
+    "image_url": "https://raw.githubusercontent.com/SGGregory76/Bizzy-Bullets-Design/main/NightClerk_AdoptableCard.png",
+    "abilities": [
+        "Scan fake IDs with 80% accuracy",
+        "Knows all local security camera blind spots",
+        "Can alert or silence law enforcement responses"
+    ],
+    "last_fed": "",
+    "owner": "",
+    "secret_key": ""
+}
+
+# Save the JSON file for Nina
+output_path = "/mnt/data/night-clerk.json"
+with open(output_path, "w") as f:
+    json.dump(night_clerk_nina_card, f, indent=2)
+
+output_path
