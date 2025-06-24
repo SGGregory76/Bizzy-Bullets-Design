@@ -2,7 +2,7 @@ import json
 
 # Define JSON metadata for the Graffiti Greg adoptable card
 card_metadata = {
-    "id": "bbd001-002",
+    "id": "GraffitiGreg_AdoptableCard_Under2MB.png",
     "name": "Graffiti Greg",
     "rarity": "Uncommon",
     "type": "Black Market Operative",
